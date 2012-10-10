@@ -13,7 +13,7 @@ throw () {
 
 gen_tabs () {
     if [ $indent -gt 0 ]; then
-        tabs=`head -c "$indent" < /dev/zero | tr '\0' "\t"`
+        tabs=`printf '%*s' "$indent" ' ' | tr ' ' "\t"`
     else
         tabs=''
     fi
